@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchProducts,addProduct,decrementProduct } from '../redux'
+import {Link} from "react-router-dom";
 
-function MainPanel ({  data, fetchProducts,addProduct, decrementProduct }) {
+function MainPanel ({  data, fetchProducts,addProduct, decrementProduct,handleClick }) {
     useEffect(() => {
         fetchProducts()
     }, [])
@@ -17,29 +18,39 @@ function MainPanel ({  data, fetchProducts,addProduct, decrementProduct }) {
         <div className="container">
 
 
+            <div className="text-right">
+                <br/>
+
+<label> </label>
+                <Link to="/Checkout" className="btn pull-right btn-sm btn-success">Checkout </Link>
+            </div>
+
             <table className="table">
                 <thead>
                 <tr>
-                    <th>NO</th>
+                    <th>No</th>
                     <th>Product Name</th>
-                    <th>Minus</th>
-                    <th>Add</th>
+                    <th>substraction</th>
+                    <th>add more</th>
                 </tr>
                 </thead>
-                {data &&
+                <tbody>
+                {
+                    data &&
                 data.product &&
                 data.product.map((product,i )=>
-                        <tbody>
-                        <tr>
-                            <td>{i}</td>
+
+                        <tr key={i} >
+                            <td >{i}</td>
                             <td>{product.title}</td>
-                            <td><button type="button" className="btn btn-warning" onClick={decrementProduct}> minus (-) </button></td>
+                            <td><button type="button" className="btn btn-sm btn-warning" value={product.title} onClick={decrementProduct}> decrease order (-) </button></td>
                             <td>
-                                <button type="button" className="btn btn-primary" onClick={addProduct}> + </button></td>
+                                <button type="button" className="btn btn-sm btn-primary" value={product.title} onClick={()=>{addProduct(product.title)}}> increase order (+) </button></td>
                         </tr>
-                        </tbody>
+
 
                     )}
+                </tbody>
             </table>
 
 
@@ -48,20 +59,26 @@ function MainPanel ({  data, fetchProducts,addProduct, decrementProduct }) {
 }
 
 
+const mapStateToProps = (state ) => {
 
-const mapStateToProps = state => {
     return {
-        data: state.product
+        data: state.product,
+
     }
 }
+
+
 
 const mapDispatchToProps = dispatch => {
     return {
         fetchProducts: () => dispatch(fetchProducts()),
-        addProduct:()=>dispatch(addProduct()),
-        decrementProduct:()=>dispatch(decrementProduct())
+        addProduct:(e)=>dispatch(addProduct(e)),
+        decrementProduct:()=>dispatch(decrementProduct()),
+
     }
 }
+
+
 
 export default connect(
     mapStateToProps,

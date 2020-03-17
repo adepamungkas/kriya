@@ -33,7 +33,8 @@ export const fetchProductsRequest = () => {
 export const fetchProductsSuccess = users => {
     return {
         type: FETCH_PRODUCT_SUCCESS,
-        payload: users
+        payload: users,
+
     }
 }
 
@@ -44,10 +45,14 @@ export const fetchProductsFailure = error => {
     }
 }
 
-export const addProduct =()=>{
+export const addProduct =(item)=>{
+
     return {
         type: INCREMENT_PRODUCT,
-
+        selectedProduct:{
+            nameProduct:item,
+            count: 1
+        }
     }
 }
 

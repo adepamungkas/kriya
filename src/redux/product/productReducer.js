@@ -10,10 +10,12 @@ const initialState = {
     loading: false,
     product: [],
     error: '',
-    totalOrder:0
+    totalOrder:0,
+    selectedProduct:[]
 }
 
 const reducer = (state = initialState, action) => {
+
     switch (action.type) {
         case FETCH_PRODUCT_REQUEST:
             return {
@@ -41,10 +43,11 @@ const reducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                totalOrder : state.totalOrder + 1
-
+                totalOrder : state.totalOrder + 1,
+                selectedProduct:state.selectedProduct.concat(action.selectedProduct)
 
             }
+
 
         case DECREMENT_PRODUCT:
 

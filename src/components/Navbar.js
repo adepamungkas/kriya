@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 
 function Navbar ({  data }) {
-console.log('ini data',data.totalOrder)
+
     return (
         <div className="container">
 
@@ -30,13 +30,11 @@ console.log('ini data',data.totalOrder)
                 <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <button type="button" className="btn btn-danger btn-sm">
-                                Total Order:  <span className="badge badge-light">{data.totalOrder}</span>
-                            </button>
+                            <label> Total Order: <span className="badge badge-pill badge-danger">{data.totalOrder}</span> </label>
+
+
                         </li>
-                        <li className="nav-item">
-                            <Link to="/Checkout" className="btn  btn-sm btn-outline-warning">Checkout </Link>
-                        </li>
+
                     </ul>
                 </div>
             </nav>
