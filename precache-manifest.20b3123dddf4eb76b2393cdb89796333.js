@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2eda079871c8990abff6cfdcd0bc028a",
+    "revision": "de61539c98403342c802e2e06ab3e97d",
     "url": "/kriya/index.html"
   },
   {
-    "revision": "8f0565bbb823c557ccce",
+    "revision": "e60d7e479d7cbec70aea",
     "url": "/kriya/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kriya/static/js/2.66a0cf29.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8f0565bbb823c557ccce",
-    "url": "/kriya/static/js/main.7865483f.chunk.js"
+    "revision": "e60d7e479d7cbec70aea",
+    "url": "/kriya/static/js/main.cdc39841.chunk.js"
   },
   {
     "revision": "247efc5bf324136ea9be",

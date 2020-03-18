@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kriya/static/css/main.5f361e03.chunk.css",
-    "main.js": "/kriya/static/js/main.7865483f.chunk.js",
-    "main.js.map": "/kriya/static/js/main.7865483f.chunk.js.map",
+    "main.js": "/kriya/static/js/main.cdc39841.chunk.js",
+    "main.js.map": "/kriya/static/js/main.cdc39841.chunk.js.map",
     "runtime-main.js": "/kriya/static/js/runtime-main.4edc2558.js",
     "runtime-main.js.map": "/kriya/static/js/runtime-main.4edc2558.js.map",
     "static/js/2.66a0cf29.chunk.js": "/kriya/static/js/2.66a0cf29.chunk.js",
     "static/js/2.66a0cf29.chunk.js.map": "/kriya/static/js/2.66a0cf29.chunk.js.map",
     "index.html": "/kriya/index.html",
-    "precache-manifest.662f94f76c0115c9708be88346dd47c0.js": "/kriya/precache-manifest.662f94f76c0115c9708be88346dd47c0.js",
+    "precache-manifest.20b3123dddf4eb76b2393cdb89796333.js": "/kriya/precache-manifest.20b3123dddf4eb76b2393cdb89796333.js",
     "service-worker.js": "/kriya/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/kriya/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.66a0cf29.chunk.js.LICENSE.txt": "/kriya/static/js/2.66a0cf29.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4edc2558.js",
     "static/js/2.66a0cf29.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.7865483f.chunk.js"
+    "static/js/main.cdc39841.chunk.js"
   ]
 }
