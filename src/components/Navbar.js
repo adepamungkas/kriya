@@ -1,4 +1,4 @@
-import React, {useEffect, Component } from 'react';
+import React from 'react';
 import {Link} from "react-router-dom";
 import {fetchProducts} from "../redux";
 import {connect} from "react-redux";

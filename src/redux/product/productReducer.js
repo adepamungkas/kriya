@@ -3,7 +3,8 @@ import {
     FETCH_PRODUCT_SUCCESS,
     FETCH_PRODUCT_FAILURE,
     INCREMENT_PRODUCT,
-    DECREMENT_PRODUCT
+    DECREMENT_PRODUCT,
+    BUY_PRODUCT
 } from './productTypes'
 
 const initialState = {
@@ -23,6 +24,7 @@ const reducer = (state = initialState, action) => {
                 loading: true,
 
             }
+
         case FETCH_PRODUCT_SUCCESS:
             return {
                 ...state,
@@ -31,6 +33,7 @@ const reducer = (state = initialState, action) => {
                 error: '',
 
             }
+
         case FETCH_PRODUCT_FAILURE:
             return {
                 loading: false,
@@ -48,7 +51,6 @@ const reducer = (state = initialState, action) => {
 
             }
 
-
         case DECREMENT_PRODUCT:
 
             if(state.totalOrder > 0){
@@ -56,6 +58,13 @@ const reducer = (state = initialState, action) => {
                     ...state,
                     totalOrder : state.totalOrder - 1
                 }
+            }
+
+        case  BUY_PRODUCT:
+            return {
+                ...state,
+                totalOrder:0,
+                selectedProduct:[]
             }
 
         default: return state

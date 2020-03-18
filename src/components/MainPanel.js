@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { fetchProducts,addProduct,decrementProduct } from '../redux'
+import { fetchProducts,incrementProduct,decrementProduct } from '../redux'
 import {Link} from "react-router-dom";
 
-function MainPanel ({  data, fetchProducts,addProduct, decrementProduct,handleClick }) {
+function MainPanel ({  data, fetchProducts,incrementProduct, decrementProduct }) {
     useEffect(() => {
         fetchProducts()
     }, [])
@@ -41,11 +41,11 @@ function MainPanel ({  data, fetchProducts,addProduct, decrementProduct,handleCl
                 data.product.map((product,i )=>
 
                         <tr key={i} >
-                            <td >{i}</td>
+                            <td >{i+1}</td>
                             <td>{product.title}</td>
                             <td><button type="button" className="btn btn-sm btn-warning" value={product.title} onClick={decrementProduct}> decrease order (-) </button></td>
                             <td>
-                                <button type="button" className="btn btn-sm btn-primary" value={product.title} onClick={()=>{addProduct(product.title)}}> increase order (+) </button></td>
+                                <button type="button" className="btn btn-sm btn-primary" value={product.title} onClick={()=>{incrementProduct(product.title)}}> increase order (+) </button></td>
                         </tr>
 
 
@@ -72,7 +72,7 @@ const mapStateToProps = (state ) => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchProducts: () => dispatch(fetchProducts()),
-        addProduct:(e)=>dispatch(addProduct(e)),
+        incrementProduct:(e)=>dispatch(incrementProduct(e)),
         decrementProduct:()=>dispatch(decrementProduct()),
 
     }

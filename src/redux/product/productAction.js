@@ -5,6 +5,7 @@ import {
     FETCH_PRODUCT_FAILURE,
     INCREMENT_PRODUCT,
     DECREMENT_PRODUCT,
+    BUY_PRODUCT
 } from './productTypes'
 
 export const fetchProducts = () => {
@@ -45,20 +46,27 @@ export const fetchProductsFailure = error => {
     }
 }
 
-export const addProduct =(item)=>{
+export const incrementProduct = (item) => {
 
     return {
         type: INCREMENT_PRODUCT,
-        selectedProduct:{
-            nameProduct:item,
-            count: 1
+        selectedProduct: {
+            item: item,
+            qty: 1
         }
     }
 }
 
-export const decrementProduct =()=>{
+export const decrementProduct = () => {
     return {
         type: DECREMENT_PRODUCT,
+
+    }
+}
+
+export const buyProduct = () => {
+    return {
+        type: BUY_PRODUCT,
 
     }
 }

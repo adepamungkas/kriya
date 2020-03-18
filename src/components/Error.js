@@ -2,7 +2,7 @@ import React from "react"
 
 class Error extends React.Component {
     render() {
-        const {book} = this.props;
+
         return (
             <div className="container">
                 <h5>Something Wrong :(</h5>

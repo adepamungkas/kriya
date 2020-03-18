@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { fetchProducts,addProduct,decrementProduct } from '../redux'
+import { fetchProducts,incrementProduct,buyProduct } from '../redux'
+import {Link} from "react-router-dom";
 
-function MainPanel ({  data,selected, fetchProducts,addProduct, decrementProduct }) {
+function MainPanel ({  data,selected, fetchProducts, buyProduct }) {
 
     useEffect(() => {
         fetchProducts()
@@ -27,43 +28,59 @@ function MainPanel ({  data,selected, fetchProducts,addProduct, decrementProduct
                     <th>Qty</th>
                 </tr>
                 </thead>
+                <tbody>
                 {data &&
                 data.product &&
-                selected.map((item,i )=>
-                    <tbody>
-                    <tr>
-                        <td>{i}</td>
-                        <td>{item.nameProduct}</td>
-                        <td>{item.count}</td>
+                selected.map((e,i )=>
+
+                    <tr key={i}>
+                        <td>{i+1}</td>
+                        <td>{e.item}</td>
+                        <td>{e.qty}</td>
                     </tr>
-                    </tbody>
+
 
                 )}
+                </tbody>
             </table>
+            <div className="text-right">
 
+                <Link to="/" className="btn pull-right btn-sm btn-warning">Back </Link>
+                &nbsp;
+                <Link to="/" onClick={buyProduct} className="btn pull-right btn-sm btn-success">Buy </Link>
+            </div>
 
         </div>
     )
 }
 
 
-
 const mapStateToProps = state => {
 
+    var selectedProduct =state.product.selectedProduct;
+    var result_grouping = [];
+    selectedProduct.reduce(function(res, value) {
+        if (!res[value.item]) {
+            res[value.item] = { item: value.item, qty: 0 };
+            result_grouping.push(res[value.item])
+        }
+        res[value.item].qty += value.qty;
+        return res;
+    }, {});
 
     return {
         data: state.product,
-        selected:state.product.selectedProduct
+        selected:result_grouping
     }
 
-
 }
+
 
 const mapDispatchToProps = dispatch => {
     return {
         fetchProducts: () => dispatch(fetchProducts()),
-        addProduct:()=>dispatch(addProduct()),
-        decrementProduct:()=>dispatch(decrementProduct())
+        incrementProduct:()=>dispatch(incrementProduct()),
+        buyProduct:()=>dispatch(buyProduct())
     }
 }
 

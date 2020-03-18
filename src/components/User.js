@@ -24,18 +24,20 @@ function User ({ userData, fetchUsers }) {
 
                 </tr>
                 </thead>
+                <tbody>
                 {userData &&
                 userData.users &&
                 userData.users.map((users,i )=>
-                    <tbody>
-                    <tr>
-                        <td>{i}</td>
+
+                    <tr key={i}>
+                        <td>{i +1 }</td>
                         <td>{users.name}</td>
 
                     </tr>
-                    </tbody>
+
 
                 )}
+                </tbody>
             </table>
 
 
