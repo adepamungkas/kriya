@@ -20,8 +20,7 @@ function MainPanel ({  data, fetchProducts,incrementProduct, decrementProduct })
 
             <div className="text-right">
                 <br/>
-
-<label> </label>
+                &nbsp;
                 <Link to="/Checkout" className="btn pull-right btn-sm btn-success">Checkout </Link>
             </div>
 

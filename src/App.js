@@ -21,6 +21,8 @@ class App extends React.Component {
                         <Navbar/>
                         <Switch>
                             <Route path="/" component={MainPanel} exact/>
+                            <Route path="/MainPanel" component={MainPanel} exact/>
+                            <Route path="/kriya" component={MainPanel} exact/>
                             <Route path="/User" component={User}/>
                             <Route path="/Checkout" component={Checkout}/>
                             <Route component={Error}/>

@@ -14,7 +14,7 @@ function Navbar ({  data }) {
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
 
-                            <Link to="/" className="nav-link">Home </Link>
+                            <Link to="/MainPanel" className="nav-link">Home </Link>
                         </li>
 
                         <li className="nav-item active">

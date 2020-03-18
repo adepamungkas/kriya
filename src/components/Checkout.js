@@ -45,9 +45,9 @@ function MainPanel ({  data,selected, fetchProducts, buyProduct }) {
             </table>
             <div className="text-right">
 
-                <Link to="/" className="btn pull-right btn-sm btn-warning">Back </Link>
+                <Link to="/MainPanel" className="btn pull-right btn-sm btn-warning">Back </Link>
                 &nbsp;
-                <Link to="/" onClick={buyProduct} className="btn pull-right btn-sm btn-success">Buy </Link>
+                <Link to="/MainPanel" onClick={buyProduct} className="btn pull-right btn-sm btn-success">Buy </Link>
             </div>
 
         </div>
